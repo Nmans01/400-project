@@ -65,7 +65,7 @@ nav>a {
     transition: color .2s ease-out;
 }
 
-nav>a:nth-last-child(3):hover {
+nav>a:nth-last-child(1):hover {
     color: #72C4FF;
 }
 
@@ -73,7 +73,7 @@ nav>a:nth-last-child(2):hover {
     color: #FF7BDA;
 }
 
-nav>a:nth-last-child(1):hover {
+nav>a:nth-last-child(3):hover {
     color: #FFF59A;
 }
 
@@ -155,7 +155,9 @@ main>.hFiller2 {
     flex-direction: column;
     gap: 7px;
 
-    height: calc(100% - 25px);
+    padding-top: 7px;
+
+    height: calc(100% - 27px);
     overflow: auto;
 }
 
@@ -166,6 +168,12 @@ main>.hFiller2 {
     padding: 5px;
     border: 1px solid var(--elementBorderColor);
     border-radius: 3px;
+
+    transition: transform .5s ease-in, border .2s ease-in;
+}
+#queue>*:hover {
+    transform: rotate3d(0, 1, -.2, 13deg);
+    border: 1px solid white;
 }
 
 #queueBottomGradient {
