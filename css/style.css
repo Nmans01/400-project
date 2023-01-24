@@ -138,12 +138,37 @@ main>.hFiller2 {
 
 #view {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr 1px 2fr;
+    gap:10px;
+}
+
+.vertSpacer {
+    height: 100%;
+    width: 1px;
+    background-color: var(--elementBorderColor);
 }
 
 #view>*:not(:first-child) {
-    justify-self: end;
+    justify-self: center;
     align-self: center;
+}
+
+#view img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    width: 20px;
+}
+
+#view a {
+    width: 100%;
+    background-color: var(--subElementColorLight);
+    border: solid 1px var(--elementBorderColor);
+    border-radius: 2px;
+
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #queueContainer {
@@ -169,10 +194,10 @@ main>.hFiller2 {
     border: 1px solid var(--elementBorderColor);
     border-radius: 3px;
 
-    transition: transform .5s ease-in, border .2s ease-in;
+    transition: border .1s ease-in;
 }
-#queue>*:hover {
-    transform: rotate3d(0, 1, -.2, 13deg);
+#queue>*:hover {/* 
+    transform: rotate3d(0, 1, -.2, 13deg); */
     border: 1px solid white;
 }
 
