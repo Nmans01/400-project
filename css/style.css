@@ -52,8 +52,10 @@ header {
     justify-content: space-between;
 }
 
-nav>* {
-    margin-left: 10px;
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 /* nav>input {
@@ -68,13 +70,24 @@ nav>a {
 nav>a:nth-last-child(1):hover {
     color: #72C4FF;
 }
+nav>a:nth-last-child(1):hover img {
+    filter: invert(81%) sepia(36%) saturate(3469%) hue-rotate(176deg) brightness(100%) contrast(102%);
+}
 
 nav>a:nth-last-child(2):hover {
     color: #FF7BDA;
 }
+nav>a:nth-last-child(2):hover img {
+    filter: invert(77%) sepia(64%) saturate(2859%) hue-rotate(282deg) brightness(101%) contrast(101%);
+}
 
 nav>a:nth-last-child(3):hover {
     color: #FFF59A;
+}
+nav>a:nth-last-child(3):hover img {
+    
+
+filter: invert(87%) sepia(69%) saturate(342%) hue-rotate(324deg) brightness(103%) contrast(108%);
 }
 
 a {
@@ -83,8 +96,32 @@ a {
     color: white;
 }
 
-a:hover {
-    text-decoration: underline;
+nav img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    width: 20px;
+    margin-right: 7px;
+}
+
+nav a {/* 
+    width: 40px; */
+
+    border: solid 1px rgb(255, 255, 255, 0);
+
+    padding: 3px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a:hover {
+    background-color: var(--subElementColorLight);
+    border: solid 1px var(--elementBorderColor);
+    border-radius: 2px;
+}
+
+nav .vertSpacer {
+    height: auto;
 }
 
 h1,/* 
@@ -196,8 +233,7 @@ main>.hFiller2 {
 
     transition: border .1s ease-in;
 }
-#queue>*:hover {/* 
-    transform: rotate3d(0, 1, -.2, 13deg); */
+#queue>*:hover {
     border: 1px solid white;
 }
 
