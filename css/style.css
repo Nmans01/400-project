@@ -70,6 +70,7 @@ nav>a {
 nav>a:nth-last-child(1):hover {
     color: #72C4FF;
 }
+
 nav>a:nth-last-child(1):hover img {
     filter: invert(81%) sepia(36%) saturate(3469%) hue-rotate(176deg) brightness(100%) contrast(102%);
 }
@@ -77,6 +78,7 @@ nav>a:nth-last-child(1):hover img {
 nav>a:nth-last-child(2):hover {
     color: #FF7BDA;
 }
+
 nav>a:nth-last-child(2):hover img {
     filter: invert(77%) sepia(64%) saturate(2859%) hue-rotate(282deg) brightness(101%) contrast(101%);
 }
@@ -84,10 +86,11 @@ nav>a:nth-last-child(2):hover img {
 nav>a:nth-last-child(3):hover {
     color: #FFF59A;
 }
-nav>a:nth-last-child(3):hover img {
-    
 
-filter: invert(87%) sepia(69%) saturate(342%) hue-rotate(324deg) brightness(103%) contrast(108%);
+nav>a:nth-last-child(3):hover img {
+
+
+    filter: invert(87%) sepia(69%) saturate(342%) hue-rotate(324deg) brightness(103%) contrast(108%);
 }
 
 a {
@@ -103,7 +106,8 @@ nav img {
     margin-right: 7px;
 }
 
-nav a {/* 
+nav a {
+    /* 
     width: 40px; */
 
     border: solid 1px rgb(255, 255, 255, 0);
@@ -120,12 +124,16 @@ nav a:hover {
     border-radius: 2px;
 }
 
+nav a:active {
+    filter: brightness(85%);
+}
+
 nav .vertSpacer {
     height: auto;
 }
 
-h1,/* 
-h2, */
+h1,
+h2,
 h3 {
     margin: 0px;
 }
@@ -176,7 +184,7 @@ main>.hFiller2 {
 #view {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1px 2fr;
-    gap:10px;
+    gap: 10px;
 }
 
 .vertSpacer {
@@ -208,6 +216,15 @@ main>.hFiller2 {
     align-items: center;
 }
 
+
+#view a:hover {
+    filter: brightness(85%);
+}
+
+#view a:active {
+    filter: brightness(70%);
+}
+
 #queueContainer {
     position: relative;
 }
@@ -233,6 +250,7 @@ main>.hFiller2 {
 
     transition: border .1s ease-in;
 }
+
 #queue>*:hover {
     border: 1px solid white;
 }
@@ -246,14 +264,23 @@ main>.hFiller2 {
 }
 
 #calendar {
-    height: calc( 100% - 36px );
+    height: calc(100% - 36px);
 }
 
 #calendarHeader {
-    padding: 0px 5px;
+    padding-left: 5px;
     display: grid;
-    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-columns: 1fr min-content;
     align-items: center;
+    gap: 10px;
+
+    margin-top: 13px;
+    margin-bottom: 20px;
+}
+
+#calendarHeader .vertSpacer {
+    width: 1px;
+    height: 28px;
 }
 
 #calendarHeader>h2 {
@@ -264,11 +291,83 @@ main>.hFiller2 {
     justify-self: end;
 }
 
-#calendarBody {
+#calendarHeader>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+#calendarHeader a {
     background-color: var(--subElementColorLight);
+    border: solid 1px var(--elementBorderColor);
+    border-radius: 2px;
+
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    text-align: center;
+
+    padding: 4px;
+}
+
+#calendarHeader a:hover {
+    filter: brightness(85%);
+}
+
+#calendarHeader a:active {
+    filter: brightness(70%);
+}
+
+#calendarHeader img {
+    display: block;
+    justify-self: center;
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    height: 18px;
+}
+
+#calendarHeader a:has(> img) {
+    width: 18px;
+}
+
+#calendarBody {
+    /* 
+    background-color: lightgray;
+    color: #1B1A1B;
     border: solid 1px var(--elementBorderColor);
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    padding: 5px; */
+    height: calc(100% - 27px);
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: min-content repeat(5, 1fr);
+    gap: 3px;
+}
+
+#calendarBody>* {
+    background-color: var(--subElementColorLight);
+    border: solid 1px var(--elementBorderColor);
+    /* 
+    border-radius: 2px; */
     padding: 5px;
-    height: calc( 100% - 46px );
+    text-align: center;
+}
+
+#calendarBody>*:nth-child(1) {
+    border-top-left-radius: 3px;
+}
+
+#calendarBody>*:nth-child(7) {
+    border-top-right-radius: 3px;
+}
+
+#calendarBody>*:nth-last-child(7) {
+    border-bottom-left-radius: 3px;
+}
+
+#calendarBody>*:nth-last-child(1) {
+    border-bottom-right-radius: 3px;
 }
