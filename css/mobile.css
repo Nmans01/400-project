@@ -1,4 +1,28 @@
+:root {
+    --mobileWidth: 1000px;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .mobileOnly {
+        display: none !important;
+    }
+}
+
 @media screen and (max-width: 1000px) {
+
+
+    .hideForMobile {
+        display: none !important;
+    }
+
+    html {
+        overflow: hidden;
+    }
+
     header {
         padding: 10px;
     }
@@ -8,28 +32,80 @@
     }
 
     nav {
-        display: none;
+        /* 
+        display: none; */
+
+        z-index: 2;
+
+        background-color: var(--elementColor);
+        border: solid 1px var(--elementBorderColor);
+        border-radius: 5px;
+        padding: 7px;
+
+        position: absolute;
+        top: 67px;
+        left: 7px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 7px;
+        column-gap: 2px;
     }
 
-    main {
-        display: block;
-        height: 100%;
+    nav a {
+        width: 70px;
+        padding: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 3px;
+    }
+
+    nav img {
         margin: 0px;
     }
 
-    #viewContainer,
+    nav div {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+    }
+
+    main {
+        /* 
+        display: block; */
+
+        position: absolute;
+        height: calc(100vh - 60px);
+        bottom: 0px;
+        margin: 0px;
+
+
+        grid-template-rows: 82px min-content 1fr;
+        grid-template-columns: calc(50vw - var(--mainMaxWidth) / 2) 348px calc(1vw + 50px) calc(50vw - var(--mainMaxWidth) / 2);
+    }
+
     #queueContainer {
-        display: none;
+        width: 318px;
     }
 
     section {
+        width: calc(100vw - 10px);
         height: calc(100% - 7px);
     }
 
     #calendarHeader {
         grid-template-columns: 1fr;
     }
+
     #calendarHeader>* {
         justify-self: start;
+    }
+
+    #calendarBody {
+        height: calc(100% - 67px);
     }
 }

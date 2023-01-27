@@ -17,14 +17,19 @@
             <!-- breadcrumbs here -->
         </div>
         <nav>
-            <input type="text" placeholder="Search...">
-            <a href="#"><img src="./img/plus.png" alt="New"> New</a>
+            <div class="hideForMobile">
+                <img src="./img/search.png" alt="Search">
+                <input type="text" placeholder="Search...">
+            </div>
+            <a href="#" class="mobileOnly"><img src="./img/search.png" alt="Search"> Search</a>
+            <a href="#"><img src="./img/plus.png" alt="New"> New...</a>
             <a href="#"><img src="./img/bell.png" alt="Alerts"> Alerts</a>
             <a href="#"><img src="./img/account.png" alt="Account"> Account</a>
         </nav>
     </header>
     <main>
         <div class="hFiller1"></div>
+        <div class="mobileOnly"></div>
         <div>
             <div id="viewContainer">
                 <h3>View Options</h3>
@@ -74,19 +79,19 @@
                             <a href="#">Week</a>
                             <a href="#">Day</a>
                         <div class="vertSpacer"></div>
-                            <a href="#">Prev</a>
+                            <a href="#" class="hideForMobile">Prev</a>
                             <a href="#"><img src="./img/target.png" alt=""></a>
-                            <a href="#">Next</a>
+                            <a href="#" class="hideForMobile">Next</a>
                         </div>
                     </div>
                     <div id="calendarBody">
-                        <div>Sunday</div>
-                        <div>Monday</div>
-                        <div>Tuesday</div>
-                        <div>Wednesday</div>
-                        <div>Thursday</div>
-                        <div>Friday</div>
-                        <div>Saturday</div>
+                        <div>S<span class="hideForMobile">unday</span></div>
+                        <div>M<span class="hideForMobile">onday</span></div>
+                        <div>T<span class="hideForMobile">uesday</span></div>
+                        <div>W<span class="hideForMobile">ednesday</span></div>
+                        <div>T<span class="hideForMobile">hursday</span></div>
+                        <div>F<span class="hideForMobile">riday</span></div>
+                        <div>S<span class="hideForMobile">aturday</span></div>
                         <div></div>
                         <div></div>
                         <div></div>
