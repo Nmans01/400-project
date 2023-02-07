@@ -81,12 +81,21 @@
         position: absolute;
         height: calc(100vh - 60px);
         bottom: 0px;
+        left: -343px;
         margin: 0px;
 
 
         grid-template-rows: 82px min-content 1fr;
         grid-template-columns: calc(50vw - var(--mainMaxWidth) / 2) 348px calc(1vw + 50px) calc(50vw - var(--mainMaxWidth) / 2);
     }
+
+    main.navOpen {
+        left: 0px;
+    }
+    .navOpen #calendarContainer{
+        filter: brightness(50%);
+    }
+
 
     #queueContainer {
         width: 318px;

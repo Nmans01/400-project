@@ -2,7 +2,7 @@
     --mainMaxWidth: 1300px;
     --viewColWidth: 300px;
     --pageColor: #1B1A1B;
-    --elementColor: #373737;
+    --elementColor: rgba(55, 55, 55,.6);
     --elementBorderColor: rgb(255, 255, 255, .2);
     --textColor: white;
     --subElementColor: #2b2b2b;
@@ -11,9 +11,11 @@
 
 body {
     color: var(--textColor);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial, Helvetica, sans-serif;
 
     background-color: var(--pageColor);
+    background-image: url(../img/background.png);
+    background-size: cover;
     margin: 0;
     height: 100vh;
 
@@ -41,10 +43,10 @@ body {
     -moz-text-fill-color: transparent;
 }
 
-header {
-    background-color: var(--elementColor);
-    padding: 20px;
-    border-bottom: 1px solid var(--elementBorderColor);
+header {/* 
+    background-color: var(--elementColor); */
+    padding: 20px;/* 
+    border-bottom: 1px solid var(--elementBorderColor); */
 
     display: flex;
     flex-direction: row;
@@ -64,7 +66,7 @@ nav {
 } */
 
 nav>a {
-    transition: color .2s ease-out;
+    /* transition: color .2s ease-out; */
 }
 
 nav>a:nth-last-child(1):hover {
@@ -161,7 +163,7 @@ main {
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-template-columns: calc(50vw - var(--mainMaxWidth) / 2) var(--viewColWidth) 1fr calc(50vw - var(--mainMaxWidth) / 2);
-    margin: 7px;
+    /* margin: 7px; */
     min-height: 0;
 }
 
@@ -170,14 +172,15 @@ main>* {
 }
 
 main>*>* {
+    backdrop-filter: blur( 9.5px );
     background-color: var(--elementColor);
-    margin: 7px;
+    margin: 0px 7px;
     padding: 7px;
     border: 1px solid var(--elementBorderColor);
     /* border-image-source: linear-gradient(188.41deg, rgba(255, 255, 255, 0.36) -1.54%, rgba(114, 196, 255, 0.289412) 20.66%, rgba(255, 123, 218, 0.36) 29.22%, rgba(255, 245, 154, 0.229412) 37.52%, rgba(255, 255, 255, 0) 70.32%, rgba(255, 255, 255, 0.36) 100.66%); */
 
     min-height: 0px;
-    height: calc(100% - 32px);
+    height: calc(100% - 25px);
     border-radius: 4px;
 }
 
@@ -251,7 +254,7 @@ main>.hFiller2 {
 
     padding-top: 7px;
 
-    height: calc(100% - 27px);
+    height: calc(100% - 34px);
     overflow: auto;
 }
 
@@ -263,11 +266,15 @@ main>.hFiller2 {
     border: 1px solid var(--elementBorderColor);
     border-radius: 3px;
 
-    transition: border .1s ease-in;
+    /* transition: border .1s ease-out; */
 }
 
 #queue>*:hover {
     border: 1px solid white;
+}
+
+#queue>*:active {
+    filter: brightness(85%);
 }
 
 #queueBottomGradient {
